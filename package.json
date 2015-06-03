@@ -1,0 +1,22 @@
+{
+  "name": "json-check",
+  "version": "0.0.0",
+  "description": "Check for valid JSON",
+  "keywords": [
+    "JSON",
+    "validate",
+    "check",
+    "lint"
+  ],
+  "homepage": "https://github.com/chbrown/json-check",
+  "repository": "git://github.com/chbrown/json-check.git",
+  "license": "MIT",
+  "author": "Christopher Brown <io@henrian.com>",
+  "dependencies": {
+    "async": "*",
+    "yargs": "*"
+  },
+  "bin": {
+    "json-check": "index.js"
+  }
+}
