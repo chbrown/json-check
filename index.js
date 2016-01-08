@@ -2,7 +2,7 @@
 var fs = require('fs');
 var async = require('async');
 
-var yargs = require('yargs')
+var argvparser = require('optimist')
   .usage('Usage: json-check <file> [<file> ...]')
   .describe({
     help: 'print this help message',
@@ -10,8 +10,8 @@ var yargs = require('yargs')
     version: 'print version',
   })
   .alias({
-    h: 'help',
-    v: 'verbose',
+    help: 'h',
+    verbose: 'v',
   })
   .boolean([
     'help',
@@ -20,16 +20,16 @@ var yargs = require('yargs')
   ]);
 
 function main() {
-  var argv = yargs.argv;
+  var argv = argvparser.argv;
 
   if (argv.help) {
-    yargs.showHelp();
+    argvparser.showHelp();
   }
   else if (argv.version) {
     console.log(require('./package').version);
   }
   else {
-    argv = yargs.demand(1).argv;
+    argv = argvparser.demand(1).argv;
 
     checkAll(argv._, argv.verbose, function(error, syntaxError) {
       if (error) {

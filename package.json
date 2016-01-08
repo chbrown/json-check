@@ -9,12 +9,15 @@
     "lint"
   ],
   "homepage": "https://github.com/chbrown/json-check",
-  "repository": "git://github.com/chbrown/json-check.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chbrown/json-check.git"
+  },
   "license": "MIT",
   "author": "Christopher Brown <io@henrian.com>",
   "dependencies": {
     "async": "*",
-    "yargs": "*"
+    "optimist": "*"
   },
   "bin": {
     "json-check": "index.js"
